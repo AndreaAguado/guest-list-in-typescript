@@ -1,10 +1,13 @@
 import React from "react";
 import { useState } from 'react';
-import { IState as IProps } from '../App';
+import { IState as Props } from '../App';
 
+interface IProps {
+    people: Props["people"]
+    setPeople: React.Dispatch<React.SetStateAction<Props["people"]>>
+}
 
-
-const AddToList = () => {
+const AddToList: React.FC<IProps> = ({people, setPeople}) => {
 
     const [input, setInput] = useState({
         name: "",
@@ -21,7 +24,30 @@ const AddToList = () => {
     }
 
     const handleClick = (): void => {
+        if( 
+            !input.name || 
+            !input.age || 
+            !input.img     
+        ) {
+            return 
+        }
 
+        setPeople([
+            ...people,
+            {
+                name: input.name,
+                age: parseInt(input.age),
+                url: input.img,
+                note: input.note
+            }
+        ]);
+
+        setInput({
+            name: "",
+            age: "",
+            note: "",
+            img: ""
+        });
     }
 
 
@@ -37,7 +63,7 @@ const AddToList = () => {
                 name="name"
             />
             <input 
-                type="text" 
+                type="number" 
                 placeholder="Age"
                 className="AddToList-input"
                 value={input.age} 
