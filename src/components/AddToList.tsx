@@ -52,7 +52,7 @@ const AddToList: React.FC<IProps> = ({people, setPeople}) => {
 
 
     return(
-        <div className="AddToList">
+        <form className="AddToList">
            <input 
                 type="text" 
                 placeholder="Name"
@@ -91,7 +91,7 @@ const AddToList: React.FC<IProps> = ({people, setPeople}) => {
             >
                 Add to List
             </button>
-        </div>
+        </form>
     )
 }
 export default AddToList;
