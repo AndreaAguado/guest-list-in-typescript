@@ -1,12 +1,15 @@
 import React from "react";
-interface IProps {
-    people: {
-      name: string
-      age: number
-      url: string
-      note?: string
-    }[]
-  }
+import { IState as IProps } from '../App';
+
+// interface IProps {
+//     people: {
+//       name: string
+//       age: number
+//       url: string
+//       note?: string
+//     }[]
+//   }
+
 const List: React.FC<IProps> = ({people}) => {
 
     // JSX.Element[] is used to define the type the function returns

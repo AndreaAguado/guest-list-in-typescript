@@ -1,5 +1,8 @@
 import React from "react";
 import { useState } from 'react';
+import { IState as IProps } from '../App';
+
+
 
 const AddToList = () => {
 
@@ -10,11 +13,15 @@ const AddToList = () => {
         img: ""
     })
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> ) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> ): void => {
         setInput({
             ...input,
             [e.target.name]: e.target.value
         })
+    }
+
+    const handleClick = (): void => {
+
     }
 
 
@@ -52,6 +59,12 @@ const AddToList = () => {
                 onChange={handleChange}
                 name="note"
             />
+            <button 
+            className="AddToList-btn"
+            onClick={handleClick}
+            >
+                Add to List
+            </button>
         </div>
     )
 }
