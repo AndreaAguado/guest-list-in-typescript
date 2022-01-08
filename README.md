@@ -1,3 +1,7 @@
+# Guest List in Typescript
+
+Is a project done following [this video](https://www.youtube.com/watch?v=jrKcJxF0lAU) in order to practice and learn how to use React with Typescript.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
