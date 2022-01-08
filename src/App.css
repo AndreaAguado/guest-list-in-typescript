@@ -1,7 +1,15 @@
 .App {
   text-align: center;
+  background-color: rgb(253, 255, 109);
+  height: 100vh;
+  padding: 30px;
 }
-
+.title {
+  margin: 0;
+}
+.title_icon {
+  height: 35px;
+}
 .List {
   list-style: none;
   display: flex;

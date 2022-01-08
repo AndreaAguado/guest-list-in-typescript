@@ -26,7 +26,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>People invited to my party</h1>
+      <h1 className="title">People invited to my party <span><img className="title_icon" src="https://emojipedia-us.s3.amazonaws.com/source/skype/289/party-popper_1f389.png" alt="party popper icon" /></span> </h1>
       <List people={people}/>
       <AddToList people={people} setPeople={setPeople} />
     </div>
