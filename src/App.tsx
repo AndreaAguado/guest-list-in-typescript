@@ -1,7 +1,12 @@
+import { 
+  Box,
+  useColorModeValue,
+ } from '@chakra-ui/react';
 import React from 'react';
 import { useState } from 'react';
 import './App.css';
 import AddToList from './components/AddToList';
+import { ColorModeSwitcher } from './components/ColorModeSwitcher';
 import List from './components/List';
 
 export interface IState {
@@ -14,7 +19,7 @@ export interface IState {
 }
 
 function App() {
-
+  const bg = useColorModeValue('teal.50', 'gray.800');
  const [people, setPeople] = useState<IState["people"]>([
    {
      name: "Mikasa Ackerman",
@@ -25,7 +30,11 @@ function App() {
  ])
 
   return (
-    <div className="App">
+    <Box className="App" textAlign="center" p="30px" h="100vh" bg={bg}
+    backgroundImage="url('https://www.pngall.com/wp-content/uploads/2016/07/Confetti-Free-Download-PNG.png')"
+    backgroundPosition="center"
+    bgSize="contain">
+      <ColorModeSwitcher/>
       <h1 className="title">People invited to my party
         <span>
            <img className="title_icon" src="https://emojipedia-us.s3.amazonaws.com/source/skype/289/party-popper_1f389.png" alt="party popper icon" />
@@ -33,7 +42,7 @@ function App() {
       </h1>
       <List people={people}/>
       <AddToList people={people} setPeople={setPeople} />
-    </div>
+    </Box>
   );
 }
 
