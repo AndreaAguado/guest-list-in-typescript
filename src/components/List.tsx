@@ -30,7 +30,7 @@ const List: React.FC<IProps> = ({people}) => {
     }
 
     const handleOnErrorEvent = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-        // Do something
+        // When img src is broken/doesn't load image correctly, this placeholder will be used instead
         e.currentTarget.src = "https://via.placeholder.com/300/9800ff/000000/?text=photo";
       };
     
