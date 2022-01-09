@@ -19,7 +19,7 @@ export interface IState {
 }
 
 function App() {
-  const bg = useColorModeValue('teal.50', 'gray.800');
+  const bg = useColorModeValue('brand.primary', 'gray.800');
  const [people, setPeople] = useState<IState["people"]>([
    {
      name: "Mikasa Ackerman",
