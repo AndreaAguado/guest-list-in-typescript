@@ -1,6 +1,9 @@
 .App {
   text-align: center;
   background-color: rgb(253, 255, 109);
+  background-image: url("https://www.pngall.com/wp-content/uploads/2016/07/Confetti-Free-Download-PNG.png");
+  background-position: center;
+  background-size: contain;
   height: 100vh;
   padding: 30px;
 }
@@ -10,17 +13,19 @@
 .title_icon {
   height: 35px;
 }
-
+.List {
+  padding: 0;
+}
 .List-item {
   list-style: none;
   display: flex;
   align-items: center;
-  /* width: 50rem; */
   width: auto;
   margin: 0rem auto;
   border: 0.1rem solid rgba(0, 0, 0, 0.233);
   padding: 1rem;
   justify-content: space-between;
+  background-color: #00ffffbd;
 }
 
 .List-header {
@@ -75,13 +80,15 @@
   .AddToList {
     width: auto;
   }
-  .List {
-    padding: 0;
-  }
   .List-header {
     flex-direction: column;
   }
   .List-name {
     font-size: 1rem;
+  }
+}
+@media all and (min-width: 1024px) {
+  .List-item {
+    width: 50rem;
   }
 }
