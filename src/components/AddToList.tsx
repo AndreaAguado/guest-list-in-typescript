@@ -52,7 +52,7 @@ const AddToList: React.FC<IProps> = ({people, setPeople}) => {
 
 
     return(
-        <form className="AddToList">
+        <form className="AddToList" onSubmit={(e) => e.preventDefault()}>
            <input 
                 type="text" 
                 placeholder="Name"
