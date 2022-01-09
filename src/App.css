@@ -10,11 +10,13 @@
 .title_icon {
   height: 35px;
 }
-.List {
+
+.List-item {
   list-style: none;
   display: flex;
   align-items: center;
-  width: 50rem;
+  /* width: 50rem; */
+  width: auto;
   margin: 0rem auto;
   border: 0.1rem solid rgba(0, 0, 0, 0.233);
   padding: 1rem;
@@ -62,4 +64,24 @@
   font-weight: 700;
   color: white;
   border: none;
+}
+
+@media all and (max-width: 500px) {
+}
+@media all and (max-width: 768px) {
+  .title {
+    font-size: 1.6rem;
+  }
+  .AddToList {
+    width: auto;
+  }
+  .List {
+    padding: 0;
+  }
+  .List-header {
+    flex-direction: column;
+  }
+  .List-name {
+    font-size: 1rem;
+  }
 }
