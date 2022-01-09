@@ -71,8 +71,6 @@
   border: none;
 }
 
-@media all and (max-width: 500px) {
-}
 @media all and (max-width: 768px) {
   .title {
     font-size: 1.6rem;

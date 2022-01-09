@@ -58,7 +58,7 @@ const AddToList: React.FC<IProps> = ({people, setPeople}) => {
                 placeholder="Name"
                 className="AddToList-input"
                 value={input.name}
-                // onChange={(e) => {}} hovering over e it says (parameter) e: React.ChangeEvent<HTMLInputElement>
+                // onChange={(e) => {}} hovering over e it says (parameter) e: React.ChangeEvent<HTMLInputElement> so that will be its TYPE
                 onChange={handleChange}
                 name="name"
             />

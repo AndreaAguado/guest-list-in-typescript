@@ -34,4 +34,4 @@ const List: React.FC<IProps> = ({people}) => {
         </ul>
     )
 }
-export default List
+export default List;
