@@ -19,7 +19,7 @@ const List: React.FC<IProps> = ({people}) => {
             return(
             <li key={index} className="List-item">
                 <div className="List-header">
-                    <img className="List-img" src={person.url} alt={person.name} />
+                    <img className="List-img" src={person.url} onError={handleOnErrorEvent} alt={person.name} />
                     <h2 className="List-name">{person.name}</h2>
                 </div>
                 <p>{person.age} years old</p>
@@ -28,6 +28,13 @@ const List: React.FC<IProps> = ({people}) => {
             </li>)
         })
     }
+
+    const handleOnErrorEvent = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+        // Do something
+        e.currentTarget.src = "https://via.placeholder.com/300/9800ff/000000/?text=photo";
+      };
+    
+
     return(
         <ul className="List">
             {renderList()}
