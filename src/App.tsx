@@ -1,5 +1,8 @@
 import { 
   Box,
+  Flex,
+  Heading,
+  Image,
   useColorModeValue,
  } from '@chakra-ui/react';
 import React from 'react';
@@ -30,16 +33,16 @@ function App() {
  ])
 
   return (
-    <Box className="App" textAlign="center" p="30px" h="100vh" bg={bg}
+    <Box textAlign="center" p="30px" h="100vh" bg={bg}
     backgroundImage="url('https://www.pngall.com/wp-content/uploads/2016/07/Confetti-Free-Download-PNG.png')"
     backgroundPosition="center"
     bgSize="contain">
       <ColorModeSwitcher/>
-      <h1 className="title">People invited to my party
-        <span>
-           <img className="title_icon" src="https://emojipedia-us.s3.amazonaws.com/source/skype/289/party-popper_1f389.png" alt="party popper icon" />
-        </span>
-      </h1>
+      <Flex justify="center" mb={5}>
+        <Heading as="h1" size="xl">People invited to my party
+        </Heading>
+        <Image src="https://emojipedia-us.s3.amazonaws.com/source/skype/289/party-popper_1f389.png" alt="party popper icon" boxSize="35px" ml={2}/>
+      </Flex>    
       <List people={people}/>
       <AddToList people={people} setPeople={setPeople} />
     </Box>
