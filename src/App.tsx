@@ -23,7 +23,7 @@ export interface IState {
 }
 
 function App() {
-  const bg = useColorModeValue('brand.primary', 'gray.800');
+  // const bg = useColorModeValue('brand.primary', 'gray.800');
  const [people, setPeople] = useState<IState["people"]>([
    {
      name: "Mikasa Ackerman",
@@ -34,7 +34,7 @@ function App() {
  ])
 
   return (
-    <Box textAlign="center" p="30px" h="100vh" bg={bg}
+    <Box textAlign="center" p="30px" h="100vh" bg={useColorModeValue('brand.primary', 'gray.800')}
     backgroundImage="url('https://www.pngall.com/wp-content/uploads/2016/07/Confetti-Free-Download-PNG.png')"
     backgroundPosition="center"
     bgSize="contain">
