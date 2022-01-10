@@ -1,6 +1,7 @@
 import { 
   Box,
   Flex,
+  Grid,
   Heading,
   Image,
   useColorModeValue,
@@ -37,7 +38,11 @@ function App() {
     backgroundImage="url('https://www.pngall.com/wp-content/uploads/2016/07/Confetti-Free-Download-PNG.png')"
     backgroundPosition="center"
     bgSize="contain">
-      <ColorModeSwitcher/>
+      <Box as="header">
+        <Grid>
+          <ColorModeSwitcher justifySelf="flex-end" />
+        </Grid>
+      </Box>
       <Flex justify="center" mb={5}>
         <Heading as="h1" size="xl">People invited to my party
         </Heading>
