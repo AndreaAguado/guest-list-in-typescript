@@ -9,13 +9,6 @@ const colors = {
 }
 
 const Input = {
-    // style object for base or default style
-    baseStyle: {
-        colorScheme: 'red',
-    },
-    // styles for different sizes ("sm", "md", "lg")
-    sizes: {},
-    // styles for different visual variants ("outline", "solid")
     variants: {
         filled: (props: any) => ({
             field: {
@@ -34,11 +27,27 @@ const Input = {
             
         })
     },
-    // default values for `size` and `variant`
-    defaultProps: {
-      size: '',
-      variant: '',
+  }
+
+  const NumberInput = {
+    variants: {
+        filled: (props: any) => ({
+            field: {
+                bgColor: mode('white', 'pink')(props),
+                _focus: {
+                    bg: mode('white', 'pink')(props)
+                },
+                _hover: {
+                    bg: mode('teal.50', 'pink.300')(props),
+                },
+                _placeholder: { 
+                    color: mode('grey', 'white')(props),
+                }
+            },
+    
+            
+        })
     },
   }
 
-export const theme = extendTheme({ colors, components: { Input } })
+export const theme = extendTheme({ colors, components: { Input, NumberInput } })
