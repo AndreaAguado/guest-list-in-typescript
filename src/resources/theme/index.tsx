@@ -1,5 +1,5 @@
 import { extendTheme } from '@chakra-ui/react'
-import {mode} from '@chakra-ui/theme-tools'
+import {mode, darken} from '@chakra-ui/theme-tools'
 
 const colors = {
     brand: {
@@ -74,4 +74,17 @@ const Input = {
     },
   }
 
-export const theme = extendTheme({ colors, components: { Input, NumberInput, Textarea } })
+  const Button = {
+    variants: {
+        inputButton: (props: any) => ({
+            bg: mode('#0b5468', '#1193b7')(props),
+            color: 'white',
+            _hover: {
+                bg: mode('teal.300', darken('#1193b7',10))(props),
+                color: mode('#0b5468', 'white')(props),
+            },
+        })
+    },
+  }
+
+export const theme = extendTheme({ colors, components: { Input, NumberInput, Textarea, Button } })

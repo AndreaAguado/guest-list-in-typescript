@@ -96,8 +96,7 @@ const AddToList: React.FC<IProps> = ({people, setPeople}) => {
                 <Button
                     onClick={handleClick}
                     size='md'
-                    color='white'
-                    bg='#0b5468'
+                    variant='inputButton'
                     >
                 Add to list
                 </Button>
