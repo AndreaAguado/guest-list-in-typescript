@@ -13,6 +13,8 @@ const Input = {
         filled: (props: any) => ({
             field: {
                 bgColor: mode('white', 'pink')(props),
+                color: mode('grey.600', 'pink.600')(props),
+                fontWeight: 'bold',
                 _focus: {
                     bg: mode('white', 'pink')(props)
                 },
@@ -21,6 +23,7 @@ const Input = {
                 },
                 _placeholder: { 
                     color: mode('grey', 'white')(props),
+                    fontWeight: 'light',
                 }
             },
     
@@ -34,6 +37,7 @@ const Input = {
         filled: (props: any) => ({
             field: {
                 bgColor: mode('white', 'pink')(props),
+                fontWeight: 'bold',
                 _focus: {
                     bg: mode('white', 'pink')(props)
                 },
@@ -42,6 +46,7 @@ const Input = {
                 },
                 _placeholder: { 
                     color: mode('grey', 'white')(props),
+                    fontWeight: 'light',
                 }
             },
     
