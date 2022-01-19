@@ -3,7 +3,8 @@ import {mode} from '@chakra-ui/theme-tools'
 
 const colors = {
     brand: {
-        primary: 'rgb(253, 255, 109)',
+        bgLightMode: 'rgb(253, 255, 109)',
+        bgDarkMode: 'gray.800'
     },
 }
 

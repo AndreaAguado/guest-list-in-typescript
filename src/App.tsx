@@ -34,7 +34,7 @@ function App() {
  ])
 
   return (
-    <Box textAlign="center" p="30px" h="100vh" bg={useColorModeValue('brand.primary', 'gray.800')}
+    <Box textAlign="center" p="30px" h="100vh" bg={useColorModeValue('brand.bgLightMode', 'brand.bgDarkMode')}
     backgroundImage="url('https://www.pngall.com/wp-content/uploads/2016/07/Confetti-Free-Download-PNG.png')"
     backgroundPosition="center"
     bgSize="contain">
