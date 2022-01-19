@@ -8,8 +8,8 @@ import {
     Stack,
     Textarea,
     Button,
-    Box,
-    NumberInputField
+    NumberInputField,
+    Flex
  } from '@chakra-ui/react'
 
 interface IProps {
@@ -62,8 +62,8 @@ const AddToList: React.FC<IProps> = ({people, setPeople}) => {
 
 
     return(
-        <Box>
-            <Stack as="form" spacing={3} onSubmit={(e) => e.preventDefault()} width={['auto', '30rem']} >
+        <Flex my="5rem" justify="center">
+            <Stack as="form" spacing={3} onSubmit={(e) => e.preventDefault()} width={['auto', '30rem']}>
                <Input 
                     placeholder='Name' 
                     value={input.name}
@@ -102,7 +102,7 @@ const AddToList: React.FC<IProps> = ({people, setPeople}) => {
                 Add to list
                 </Button>
             </Stack>
-        </Box>
+        </Flex>
         
     )
 }
