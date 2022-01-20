@@ -71,12 +71,14 @@ const AddToList: React.FC<IProps> = ({people, setPeople}) => {
                     name="name"
                     size='md' 
                     variant='filled'/>
-               <NumberInput  size='md' variant='filled'>
+               <NumberInput 
+                    value={input.age} 
+                    size='md' 
+                    variant='filled'
+                    name="age">
                    <NumberInputField
                         placeholder='Age'
-                        value={input.age}
                         onChange={handleChange}
-                        name="age"
                         />
                </NumberInput>
                <Input 
