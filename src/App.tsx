@@ -34,10 +34,13 @@ function App() {
  ])
 
   return (
-    <Box textAlign="center" p="30px" h="100vh" bg={useColorModeValue('brand.bgLightMode', 'brand.bgDarkMode')}
+    <Box textAlign="center" p="30px" minH="100vh" bg={useColorModeValue('brand.bgLightMode', 'brand.bgDarkMode')}
     backgroundImage="url('https://www.pngall.com/wp-content/uploads/2016/07/Confetti-Free-Download-PNG.png')"
     backgroundPosition="center"
-    bgSize="contain">
+    bgSize="contain"
+    bgAttachment="fixed"
+    bgRepeat="repeat"  
+      >
       <Box as="header">
         <Grid>
           <ColorModeSwitcher justifySelf="flex-end" />
