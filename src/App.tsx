@@ -41,7 +41,7 @@ function App() {
     bgAttachment="fixed"
     bgRepeat="repeat"  
       >
-      <Box as="header">
+      <Box as="header" pos="fixed" top="30px" right="30px">
         <Grid>
           <ColorModeSwitcher justifySelf="flex-end" />
         </Grid>
