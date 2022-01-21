@@ -6,6 +6,7 @@ import {
     ListItem,
     SimpleGrid,
     GridItem,
+    Image,
 } from "@chakra-ui/react";
 import React from "react";
 import { IState as IProps } from '../App';
@@ -32,7 +33,14 @@ const List: React.FC<IProps> = ({people}) => {
                 >
                     <GridItem colSpan={4}>
                         <Stack direction={['column', 'row']} justify="flex-start" align="center">
-                            <img className="List-img" src={person.url} onError={handleOnErrorEvent} alt={person.name} />
+                            <Image 
+                            src={person.url} 
+                            onError={handleOnErrorEvent} 
+                            alt={person.name} 
+                            w='4rem'
+                            h='4rem'
+                            borderRadius='100%'
+                            mr='0.5.5rem'/>
                             <Heading as="h2" size="lg">{person.name}</Heading>
                         </Stack>
                     </GridItem>
