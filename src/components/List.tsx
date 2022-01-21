@@ -26,20 +26,20 @@ const List: React.FC<IProps> = ({people}) => {
     const renderList = (): JSX.Element[] => {
         return people.map( (person, index) => {
             return(
-            <ListItem key={index} variant='myListItem'>
-                <SimpleGrid alignItems='center'
-                columns={[1, 5]} 
+            <ListItem key={index} variant='myListItem' bg='#00ffffbd' p='1.1rem' borderColor='rgba(0, 0, 0, 0.233)' borderWidth='0.1rem'>
+                <SimpleGrid alignItems='center' 
+                columns={[1, 9]} 
                 >
-                    <GridItem colSpan={2} bg='pink'>
+                    <GridItem colSpan={4}>
                         <Stack direction={['column', 'row']} justify="flex-start" align="center">
                             <img className="List-img" src={person.url} onError={handleOnErrorEvent} alt={person.name} />
                             <Heading as="h2" size="lg" className="List-name">{person.name}</Heading>
                         </Stack>
                     </GridItem>
-                    <GridItem colSpan={1} bg='purple.500'>
+                    <GridItem colSpan={2}>
                         <Text w='100%' fontWeight="bold">{person.age} years old</Text>
                     </GridItem>
-                    <GridItem colSpan={2} bg='green.200'>
+                    <GridItem colSpan={3}>
                         <Text w='100%' fontWeight="bold">{person.note}</Text>
                     </GridItem>
                 </SimpleGrid>
