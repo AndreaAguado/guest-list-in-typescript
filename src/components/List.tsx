@@ -2,6 +2,10 @@ import {
     Heading, 
     Stack,
     Text,
+    List as ChakraList,
+    ListItem,
+    SimpleGrid,
+    GridItem,
 } from "@chakra-ui/react";
 import React from "react";
 import { IState as IProps } from '../App';
@@ -22,14 +26,24 @@ const List: React.FC<IProps> = ({people}) => {
     const renderList = (): JSX.Element[] => {
         return people.map( (person, index) => {
             return(
-            <li key={index} className="List-item">
-                <Stack direction={['column', 'row']} justify="center" align="center">
-                    <img className="List-img" src={person.url} onError={handleOnErrorEvent} alt={person.name} />
-                    <Heading as="h2" size="lg" className="List-name">{person.name}</Heading>
-                </Stack>
-                <Text fontWeight="bold">{person.age} years old</Text>
-                <Text fontWeight="bold" className="List-note">{person.note}</Text>
-            </li>
+            <ListItem key={index} variant='myListItem'>
+                <SimpleGrid alignItems='center'
+                columns={[1, 5]} 
+                >
+                    <GridItem colSpan={2} bg='pink'>
+                        <Stack direction={['column', 'row']} justify="flex-start" align="center">
+                            <img className="List-img" src={person.url} onError={handleOnErrorEvent} alt={person.name} />
+                            <Heading as="h2" size="lg" className="List-name">{person.name}</Heading>
+                        </Stack>
+                    </GridItem>
+                    <GridItem colSpan={1} bg='purple.500'>
+                        <Text w='100%' fontWeight="bold">{person.age} years old</Text>
+                    </GridItem>
+                    <GridItem colSpan={2} bg='green.200'>
+                        <Text w='100%' fontWeight="bold">{person.note}</Text>
+                    </GridItem>
+                </SimpleGrid>
+            </ListItem>
             )
         })
     }
@@ -41,9 +55,9 @@ const List: React.FC<IProps> = ({people}) => {
     
 
     return(
-        <ul className="List">
+        <ChakraList mx='auto' width={{base: 'auto', lg: '60rem'}}>
             {renderList()}
-        </ul>
+        </ChakraList>
     )
 }
 export default List;

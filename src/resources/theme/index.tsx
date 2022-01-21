@@ -89,4 +89,15 @@ const Input = {
     },
   }
 
-export const theme = extendTheme({ colors, components: { Input, NumberInput, Textarea, Button } })
+  const ListItem = {
+    variants: {
+        'myListItem': {
+            listStyleType: 'none',
+            // padding: '16px',
+            // borderColor:'red',
+            // borderWidth:'0.1rem',
+        }
+    },
+  }
+
+export const theme = extendTheme({ colors, components: { Input, NumberInput, Textarea, Button, ListItem } })
