@@ -33,7 +33,7 @@ const List: React.FC<IProps> = ({people}) => {
                     <GridItem colSpan={4}>
                         <Stack direction={['column', 'row']} justify="flex-start" align="center">
                             <img className="List-img" src={person.url} onError={handleOnErrorEvent} alt={person.name} />
-                            <Heading as="h2" size="lg" className="List-name">{person.name}</Heading>
+                            <Heading as="h2" size="lg">{person.name}</Heading>
                         </Stack>
                     </GridItem>
                     <GridItem colSpan={2}>
