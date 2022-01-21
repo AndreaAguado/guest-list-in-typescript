@@ -1,4 +1,8 @@
-import { Heading, Stack } from "@chakra-ui/react";
+import { 
+    Heading, 
+    Stack,
+    Text,
+} from "@chakra-ui/react";
 import React from "react";
 import { IState as IProps } from '../App';
 
@@ -23,10 +27,10 @@ const List: React.FC<IProps> = ({people}) => {
                     <img className="List-img" src={person.url} onError={handleOnErrorEvent} alt={person.name} />
                     <Heading as="h2" size="lg" className="List-name">{person.name}</Heading>
                 </Stack>
-                <p>{person.age} years old</p>
-                <p className="List-note">{person.note}</p>
-
-            </li>)
+                <Text fontWeight="bold">{person.age} years old</Text>
+                <Text fontWeight="bold" className="List-note">{person.note}</Text>
+            </li>
+            )
         })
     }
 
