@@ -2,6 +2,16 @@ import React from "react";
 import { useState } from 'react';
 import { IState as Props } from '../App';
 
+import { 
+    Input,
+    NumberInput,
+    Stack,
+    Textarea,
+    Button,
+    NumberInputField,
+    Flex
+ } from '@chakra-ui/react'
+
 interface IProps {
     people: Props["people"]
     setPeople: React.Dispatch<React.SetStateAction<Props["people"]>>
@@ -52,46 +62,49 @@ const AddToList: React.FC<IProps> = ({people, setPeople}) => {
 
 
     return(
-        <form className="AddToList" onSubmit={(e) => e.preventDefault()}>
-           <input 
-                type="text" 
-                placeholder="Name"
-                className="AddToList-input"
-                value={input.name}
-                // onChange={(e) => {}} hovering over e it says (parameter) e: React.ChangeEvent<HTMLInputElement> so that will be its TYPE
-                onChange={handleChange}
-                name="name"
-            />
-            <input 
-                type="number" 
-                placeholder="Age"
-                className="AddToList-input"
-                value={input.age} 
-                onChange={handleChange}
-                name="age"
-            />
-            <input 
-                type="text" 
-                placeholder="Image Url"
-                className="AddToList-input"
-                value={input.img} 
-                onChange={handleChange}
-                name="img"
-            />
-             <textarea 
-                placeholder="Notes"
-                className="AddToList-input"
-                value={input.note}  
-                onChange={handleChange}
-                name="note"
-            />
-            <button 
-            className="AddToList-btn"
-            onClick={handleClick}
-            >
-                Add to List
-            </button>
-        </form>
+        <Flex my="5rem" justify="center">
+            <Stack as="form" spacing={3} onSubmit={(e) => e.preventDefault()} width={['auto', '30rem']}>
+               <Input 
+                    placeholder='Name' 
+                    value={input.name}
+                    onChange={handleChange}
+                    name="name"
+                    size='md' 
+                    variant='filled'/>
+               <NumberInput 
+                    value={input.age} 
+                    size='md' 
+                    variant='filled'
+                    name="age">
+                   <NumberInputField
+                        placeholder='Age'
+                        onChange={handleChange}
+                        />
+               </NumberInput>
+               <Input 
+                    placeholder='Image URL' 
+                    value={input.img} 
+                    onChange={handleChange}
+                    name="img"
+                    size='md' 
+                    variant='filled' />
+               <Textarea 
+                    placeholder='Notes' 
+                    value={input.note}  
+                    onChange={handleChange}
+                    name="note"
+                    variant='filled' 
+                    />
+                <Button
+                    onClick={handleClick}
+                    size='md'
+                    variant='inputButton'
+                    >
+                Add to list
+                </Button>
+            </Stack>
+        </Flex>
+        
     )
 }
 export default AddToList;

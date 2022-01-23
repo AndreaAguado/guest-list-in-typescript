@@ -1,3 +1,13 @@
+import { 
+    Heading, 
+    Stack,
+    Text,
+    List as ChakraList,
+    ListItem,
+    SimpleGrid,
+    GridItem,
+    Image,
+} from "@chakra-ui/react";
 import React from "react";
 import { IState as IProps } from '../App';
 
@@ -17,15 +27,32 @@ const List: React.FC<IProps> = ({people}) => {
     const renderList = (): JSX.Element[] => {
         return people.map( (person, index) => {
             return(
-            <li key={index} className="List-item">
-                <div className="List-header">
-                    <img className="List-img" src={person.url} onError={handleOnErrorEvent} alt={person.name} />
-                    <h2 className="List-name">{person.name}</h2>
-                </div>
-                <p>{person.age} years old</p>
-                <p className="List-note">{person.note}</p>
-
-            </li>)
+            <ListItem key={index} variant='myListItem' bg='#00ffffbd' p='1.1rem' borderColor='rgba(0, 0, 0, 0.233)' borderWidth='0.1rem'>
+                <SimpleGrid alignItems='center' 
+                columns={[1, 9]} 
+                >
+                    <GridItem colSpan={4}>
+                        <Stack direction={['column', 'row']} justify="flex-start" align="center">
+                            <Image 
+                            src={person.url} 
+                            onError={handleOnErrorEvent} 
+                            alt={person.name} 
+                            w='4rem'
+                            h='4rem'
+                            borderRadius='100%'
+                            mr='0.5.5rem'/>
+                            <Heading as="h2" size="lg">{person.name}</Heading>
+                        </Stack>
+                    </GridItem>
+                    <GridItem colSpan={2}>
+                        <Text w='100%' fontWeight="bold">{person.age} years old</Text>
+                    </GridItem>
+                    <GridItem colSpan={3}>
+                        <Text w='100%' fontWeight="bold">{person.note}</Text>
+                    </GridItem>
+                </SimpleGrid>
+            </ListItem>
+            )
         })
     }
 
@@ -36,9 +63,9 @@ const List: React.FC<IProps> = ({people}) => {
     
 
     return(
-        <ul className="List">
+        <ChakraList mx='auto' width={{base: 'auto', lg: '60rem'}}>
             {renderList()}
-        </ul>
+        </ChakraList>
     )
 }
 export default List;

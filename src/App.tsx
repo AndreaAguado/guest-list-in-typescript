@@ -1,7 +1,16 @@
+import { 
+  Box,
+  Flex,
+  Grid,
+  Heading,
+  Image,
+  useColorModeValue,
+ } from '@chakra-ui/react';
 import React from 'react';
 import { useState } from 'react';
 import './App.css';
 import AddToList from './components/AddToList';
+import { ColorModeSwitcher } from './components/ColorModeSwitcher';
 import List from './components/List';
 
 export interface IState {
@@ -14,7 +23,7 @@ export interface IState {
 }
 
 function App() {
-
+  // const bg = useColorModeValue('brand.primary', 'gray.800');
  const [people, setPeople] = useState<IState["people"]>([
    {
      name: "Mikasa Ackerman",
@@ -25,15 +34,26 @@ function App() {
  ])
 
   return (
-    <div className="App">
-      <h1 className="title">People invited to my party
-        <span>
-           <img className="title_icon" src="https://emojipedia-us.s3.amazonaws.com/source/skype/289/party-popper_1f389.png" alt="party popper icon" />
-        </span>
-      </h1>
+    <Box p="30px" minH="100vh" bg={useColorModeValue('brand.bgLightMode', 'brand.bgDarkMode')}
+    backgroundImage="url('https://www.pngall.com/wp-content/uploads/2016/07/Confetti-Free-Download-PNG.png')"
+    backgroundPosition="center"
+    bgSize="contain"
+    bgAttachment="fixed"
+    bgRepeat="repeat"  
+      >
+      <Box as="header" pos="fixed" top="30px" right="30px">
+        <Grid>
+          <ColorModeSwitcher justifySelf="flex-end" />
+        </Grid>
+      </Box>
+      <Flex justify="center" alignItems="center" mb={5} mt={{base: '35px', md: '0px'}}>
+        <Heading as="h1" size="xl" textAlign='center'>People invited to my party
+        </Heading>
+        <Image src="https://emojipedia-us.s3.amazonaws.com/source/skype/289/party-popper_1f389.png" alt="party popper icon" boxSize="35px" ml={2}/>
+      </Flex>    
       <List people={people}/>
       <AddToList people={people} setPeople={setPeople} />
-    </div>
+    </Box>
   );
 }
 
