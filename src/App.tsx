@@ -46,8 +46,8 @@ function App() {
           <ColorModeSwitcher justifySelf="flex-end" />
         </Grid>
       </Box>
-      <Flex justify="center" mb={5}>
-        <Heading as="h1" size="xl">People invited to my party
+      <Flex justify="center" alignItems="center" mb={5} mt={{base: '35px', md: '0px'}}>
+        <Heading as="h1" size="xl" textAlign='center'>People invited to my party
         </Heading>
         <Image src="https://emojipedia-us.s3.amazonaws.com/source/skype/289/party-popper_1f389.png" alt="party popper icon" boxSize="35px" ml={2}/>
       </Flex>    
