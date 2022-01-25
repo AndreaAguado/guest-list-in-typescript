@@ -1,5 +1,6 @@
 import { extendTheme } from '@chakra-ui/react'
 import {mode, darken} from '@chakra-ui/theme-tools'
+import { ChakraProps } from '../../components/types';
 
 const colors = {
     brand: {
@@ -10,7 +11,7 @@ const colors = {
 
 const Input = {
     variants: {
-        filled: (props: any) => ({
+        filled: (props: ChakraProps) => ({
             field: {
                 bgColor: mode('white', 'pink')(props),
                 color: mode('grey.600', 'pink.600')(props),
@@ -34,7 +35,7 @@ const Input = {
 
   const NumberInput = {
     variants: {
-        filled: (props: any) => ({
+        filled: (props: ChakraProps) => ({           
             field: {
                 bgColor: mode('white', 'pink')(props),
                 color: mode('grey.600', 'pink.600')(props),
@@ -49,9 +50,7 @@ const Input = {
                     color: mode('grey', 'white')(props),
                     fontWeight: 'light',
                 }
-            },
-    
-            
+            },   
         })
     },
   }
